@@ -7,6 +7,39 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+requests = "^2.31.0"
+pandas = "^2.2.0"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+pytest-cov = "^4.1.0"
+
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+black = "^23.12.1"
+isort = "^5.13.2"
+
+[tool.mypy]
+disallow_untyped_defs = 'True'
+no_implicit_optional = 'True'
+warn_return_any = 'True'
+
+[tool.isort]
+include_trailing_comma = true
+line_length = 120
+lines_after_imports = 2
+skip = '__init__.py'
+
+[tool.black]
+line-length = 120
+exclude = """
+    venv/
+    tests/
+"""
 
 
 [build-system]
