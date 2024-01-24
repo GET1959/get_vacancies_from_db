@@ -1,2 +1,2 @@
-# get_vacancies_from_db
+# get_vacancies_to_db
 database course project
