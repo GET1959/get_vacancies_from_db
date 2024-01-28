@@ -6,7 +6,7 @@ from config import config
 PARAMS = config()
 
 
-class DBmanager:
+class DBManager:
     def __init__(self, db_name):
         PARAMS.update({"dbname": db_name})
 

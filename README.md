@@ -26,7 +26,7 @@ database course project
 
 ### Модуль db_manager
 
-В модуле db_manager представлен класс DBmanager для работы с базой данных.
+В модуле db_manager представлен класс DBManager для работы с базой данных.
 
 Метод get_companies_and_vacancies_count позволяет получить список компаний-работодателей с количеством актуальных вакансий по каждой.
 

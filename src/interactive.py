@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Any
-from src.db_manager import DBmanager
+from src.db_manager import DBManager
 
 
 GREETING = (
@@ -46,7 +46,7 @@ def user_func(database: Any) -> None:
     print("Чтобы получить информацию о вакансиях с зарплатой выше средней, введите 4")
     print("Чтобы получить список вакансий по ключевому слову, введите ключевое слово")
 
-    dbm = DBmanager(database)
+    dbm = DBManager(database)
 
     user_input = input()
     if user_input == "1":
