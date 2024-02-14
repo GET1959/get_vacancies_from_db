@@ -23,10 +23,10 @@ def declension(number: int, word: str, word_1: str, word_2: str) -> str:
     :return word in right declension:
     """
     return (
-        word * (str(number)[-1] == "1" and number % 100 != 11)
-        + word_1 * (str(number)[-1] in ["2", "3", "4"] and number % 100 not in [12, 13, 14])
-        + word_2 * (str(number)[-1] in ["0", "5", "6", "7", "8", "9"] or number % 100 in [11, 12, 13, 14])
-    )
+            word * (number % 10 == 1 and number % 100 != 11)
+            + word_1 * (number % 10 in [2, 3, 4] and number % 100 not in [12, 13, 14])
+            + word_2 * (number % 10 in [0, 5, 6, 7, 8, 9] or number % 100 in [11, 12, 13, 14])
+            )
 
 
 def user_func(database: Any) -> None:
