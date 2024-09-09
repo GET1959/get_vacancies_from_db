@@ -13,6 +13,7 @@ with open("companies.json", "r", encoding="utf-8") as file:
     EMPLOYER_ID_LIST = list(json.load(file).values())
 URL = "https://api.hh.ru/vacancies?"
 HEADERS = {"HH-User-Agent": "get_vacancies_to_db (topchiev@mail.ru)"}
+print(EMPLOYER_ID_LIST)
 
 
 def get_currency_rate(currency: str) -> float:
@@ -62,12 +63,14 @@ def create_db(db_name):
     :return None:
     """
     params = config()
+    print(params)
     conn = None
     try:
         conn = psycopg2.connect(**params)
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with conn.cursor() as cursor:
             cursor.execute(f"CREATE DATABASE {db_name}")
+        print(f'Database {db_name} successfully created')
     except (Exception, Error) as error:
         print("Ошибка при работе с PostgreSQL", error)
     finally:
@@ -123,8 +126,9 @@ def create_db(db_name):
                             ),
                         )
                     time.sleep(0.2)
+        print(f'Database {db_name} successfully filled')
     except (Exception, Error) as error:
         print("Ошибка при работе с PostgreSQL", error)
     finally:
-        if conn is not None:
+        if conn:
             conn.close()
