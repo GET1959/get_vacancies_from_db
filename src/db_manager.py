@@ -28,7 +28,7 @@ class DBManager:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
-            if conn is not None:
+            if conn:
                 conn.close()
 
     @staticmethod
@@ -48,7 +48,7 @@ class DBManager:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
-            if conn is not None:
+            if conn:
                 conn.close()
 
     @staticmethod
@@ -65,7 +65,7 @@ class DBManager:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
-            if conn is not None:
+            if conn:
                 conn.close()
 
     @staticmethod
@@ -86,7 +86,7 @@ class DBManager:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
-            if conn is not None:
+            if conn:
                 conn.close()
 
     @staticmethod
@@ -107,5 +107,5 @@ class DBManager:
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
-            if conn is not None:
+            if conn:
                 conn.close()
